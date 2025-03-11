@@ -17,25 +17,34 @@
 </head>
 <body>
 
-    <h1>Chatbot TEST</h1>
+    <h1>Bienvenido al Chatbot de PEX</h1>
+    <p>Haz clic en el botón de chat en la esquina inferior derecha para comenzar.</p>
 
-    <!-- Scripts de Botpress -->
+    <!-- Script de Webchat de Botpress -->
     <script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2025/03/10/18/20250310183517-ZRMNLO8Q.js"></script>
+
+
     <script>
-        window.botpressWebChat.init({
-            "botId": "5539d82b-f9f5-47fd-86d0-1df0bc4d429a",  /* Reemplaza con tu Bot ID */
-            "host": "https://cdn.botpress.cloud/webchat",
-            "messagingUrl": "https://messaging.botpress.cloud",
-            "clientId": "5539d82b-f9f5-47fd-86d0-1df0bc4d429a",
-            "showPoweredBy": false, /* Oculta "Powered by Botpress" */
-            "enableReset": true, /* Agrega botón de reinicio de conversación */
-            "themeName": "light", 
-            //"stylesheet": "https://TUESTILOCSS.com/custom.css", /* Opcional: Añadir CSS personalizado */
-            "avatarUrl": "https://TUBOTICONO.com/avatar.png", /* Icono del bot */
-            "composerPlaceholder": "Escribe tu mensaje...",
-            "enableTranscriptDownload": true, /* Permitir descargar conversación */
-            "showConversationsButton": true, /* Mostrar historial de conversaciones */
-            "useSessionStorage": false /* Cambia a true si quieres borrar la conversación al recargar */
+        document.addEventListener("DOMContentLoaded", function () {
+            // Esperar a que el script de Botpress esté disponible
+            const interval = setInterval(() => {
+                if (window.botpressWebChat) {
+                    clearInterval(interval); // Detiene la espera una vez que el script está cargado
+                    
+                    window.botpressWebChat.init({
+                        "botId": "5539d82b-f9f5-47fd-86d0-1df0bc4d429a",  /* Reemplaza con tu Bot ID */
+                        "host": "https://cdn.botpress.cloud/webchat",
+                        "messagingUrl": "https://messaging.botpress.cloud",
+                        "clientId": "5539d82b-f9f5-47fd-86d0-1df0bc4d429a",
+                        "showPoweredBy": false,
+                        "enableReset": true,
+                        "themeName": "light",
+                        "composerPlaceholder": "Escribe tu mensaje...",
+                        "useSessionStorage": true
+                    });
+                }
+            }, 500); // Revisa cada 500ms si el script de Botpress ya está disponible
         });
     </script>
 
