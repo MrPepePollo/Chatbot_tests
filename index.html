@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot PEX</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Chatbot TEST</h1>
+
+    <!-- Scripts de Botpress -->
+    <script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
+    <script>
+        window.botpressWebChat.init({
+            "botId": "5539d82b-f9f5-47fd-86d0-1df0bc4d429a",  /* Reemplaza con tu Bot ID */
+            "host": "https://cdn.botpress.cloud/webchat",
+            "messagingUrl": "https://messaging.botpress.cloud",
+            "clientId": "5539d82b-f9f5-47fd-86d0-1df0bc4d429a",
+            "showPoweredBy": false, /* Oculta "Powered by Botpress" */
+            "enableReset": true, /* Agrega botón de reinicio de conversación */
+            "themeName": "light", 
+            //"stylesheet": "https://TUESTILOCSS.com/custom.css", /* Opcional: Añadir CSS personalizado */
+            "avatarUrl": "https://TUBOTICONO.com/avatar.png", /* Icono del bot */
+            "composerPlaceholder": "Escribe tu mensaje...",
+            "enableTranscriptDownload": true, /* Permitir descargar conversación */
+            "showConversationsButton": true, /* Mostrar historial de conversaciones */
+            "useSessionStorage": false /* Cambia a true si quieres borrar la conversación al recargar */
+        });
+    </script>
+
+</body>
+</html>
